@@ -17,13 +17,6 @@
 	<link rel="icon" type="image/png" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon.png" />
 	
 	<?php
-	// CSS
-	wp_enqueue_style( 'normalize', get_stylesheet_directory_uri() . '/css/normalize.css' );
-        // ADD your css here
-        
-	wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.css' );
-	
-        // JAVASCRIPT
 	// Use jquery and jquery core from the google cdn instead of wordpress included
 	wp_deregister_script( 'jquery-ui-core' );
 	wp_deregister_script( 'jquery-ui-tab' );
@@ -49,15 +42,38 @@
 	wp_enqueue_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', array(), '1.8.3' );
 	wp_enqueue_script( 'jquery-ui-core', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js', array( 'jquery' ), '1.9.2', true);
 	
-	// Modernizr for html5 and CSS3 support
-	wp_enqueue_script( 'modernizr', get_stylesheet_directory_uri() . '/js/modernizr.js' , array(), '2.6.2', true);
+	// Comment reply JS
+	if( is_singular() ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 	
-        // ADD your js here
-        
-	// Default js of your theme to add your own js scripts
+		
+	// @TODO : Uncomment what you need
+	
+	// Modernizr for html5 and CSS3 support
+	//wp_enqueue_script( 'modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js' , array(), '2.8.3', true);
+	
+	// Normalize
+	//wp_enqueue_style( 'normalize', 'https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css' );
+    
+	// Bootstrap
+	//wp_enqueue_script( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js' , array('jquery'), '3.3.6', true);
+	//wp_enqueue_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' );
+	
+	// ADD your css below
+		
+    
+	// ADD your js below
+	
+    
+	// Default theme stylesheet
+	wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.css' );
+    
+	// Default js of your theme to add your own js scripts, add dependances if needed
 	wp_enqueue_script( 'scripts', get_stylesheet_directory_uri() . '/js/scripts.js' , array( 'jquery' ), '1.0', true);
 
-        wp_head();
+		
+    wp_head();
 	?>
 </head>
 <body <?php echo body_class(); ?>>

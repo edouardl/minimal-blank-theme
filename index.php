@@ -13,6 +13,8 @@
         <a href="<?php the_permalink(); ?>" class="read-more"><?php _e( 'Read more', 'minimal-blank-theme' ); ?></a>
     </article>
     <?php endwhile; endif; ?>
-
+	
+	<?php the_posts_pagination(); ?>
+	
 </section>
 <?php get_footer(); ?>
