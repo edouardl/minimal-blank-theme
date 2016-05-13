@@ -16,6 +16,9 @@ The Minimal Blank Theme made by Pierre-Olivier Blouin and Edouard Labre, is curr
 
 Changelog
 ===================
+Version 1.4
+- Responsive fix
+
 Version 1.3
 - Update jQuery (1.11.3) and jquery-ui (1.11.4) to keep compatibility with bootstrap 3.3.6
 
