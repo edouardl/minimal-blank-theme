@@ -4,28 +4,28 @@
 
 // Add your theme support ( cf :  http://codex.wordpress.org/Function_Reference/add_theme_support )
 function customThemeSupport() {
-	global $wp_version;
-	
-	add_theme_support( 'menus' );
-	
-	//add_theme_support( 'title-tag' );
-	//add_theme_support( 'custom-background', $args );
-	//add_theme_support( 'custom-header', $args );
-	
-	// Automatic feed links compatibility
-	if( version_compare( $wp_version, '3.0', '>=' ) ) {
-		add_theme_support( 'automatic-feed-links' ); 
-	} else {
-		automatic_feed_links();
-	}
+    global $wp_version;
+
+    add_theme_support( 'menus' );
+
+    //add_theme_support( 'title-tag' );
+    //add_theme_support( 'custom-background', $args );
+    //add_theme_support( 'custom-header', $args );
+
+    // Automatic feed links compatibility
+    if( version_compare( $wp_version, '3.0', '>=' ) ) {
+        add_theme_support( 'automatic-feed-links' ); 
+    } else {
+        automatic_feed_links();
+    }
 }
 add_action( 'after_setup_theme', 'customThemeSupport' );
 
 
 // Content width
 if( !isset( $content_width ) ) {
-	// @TODO : edit the value for your own specifications
-	$content_width = 960;
+    // @TODO : edit the value for your own specifications
+    $content_width = 960;
 }
 
 
@@ -37,9 +37,9 @@ register_nav_menus( array(
 
 // Register sidebars
 function registerThemeSidebars() {
-	if( function_exists( 'register_sidebar' ) ) {
-		return;
-	}
+    if( !function_exists( 'register_sidebar' ) ) {
+        return;
+    }
 
     register_sidebar( array(
         'name' => 'Main sidebar',
