@@ -2,13 +2,7 @@ minimal-blank-theme
 ===================
 A simple, light and minimal blank theme, to start any wordpress project, without need of deleting or changing any code. Just add yours.
 
-Don't forget to change the domain to yours if you need translation or to change the text, in this files :
-- 404.php (lines 3, 6)
-- comments.php (lines 15, 26, 27, 28, 37)
-- index.php (line 13)
-
-Morover edit the value of $content_width in functions.php for your own theme and uncomment any js or css lib you need in header.php
-
+Don't forget to  edit the value of $content_width in functions.php for your own theme and uncomment any js or css lib you need in inc/enqueues.php
 Default required css are set in style.css
 
 The Minimal Blank Theme made by Pierre-Olivier Blouin and Edouard Labre, is currently in version 1.2 (2016/03/08).
@@ -16,6 +10,12 @@ The Minimal Blank Theme made by Pierre-Olivier Blouin and Edouard Labre, is curr
 
 Changelog
 ===================
+Version 1.5
+- cleanup <head> section
+- cleanup files : remove external librairies (can be call from CDNs)
+- reorganisation of blocks files to have a better files architecture : the_content and loop content in specifics files
+- identify lines with domain name to change with @TODO
+
 Version 1.4
 - Responsive fix
 

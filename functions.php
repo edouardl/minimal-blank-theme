@@ -1,5 +1,7 @@
 <?php
 // Include your functions files here
+include('inc/enqueues.php');
+
 
 
 // Add your theme support ( cf :  http://codex.wordpress.org/Function_Reference/add_theme_support )
@@ -7,6 +9,7 @@ function customThemeSupport() {
     global $wp_version;
 
     add_theme_support( 'menus' );
+    add_theme_support( 'post-thumbnails' );
 
     //add_theme_support( 'title-tag' );
     //add_theme_support( 'custom-background', $args );
@@ -14,7 +17,7 @@ function customThemeSupport() {
 
     // Automatic feed links compatibility
     if( version_compare( $wp_version, '3.0', '>=' ) ) {
-        add_theme_support( 'automatic-feed-links' ); 
+        add_theme_support( 'automatic-feed-links' );
     } else {
         automatic_feed_links();
     }
@@ -31,7 +34,7 @@ if( !isset( $content_width ) ) {
 
 // Register menus, use wp_nav_menu() to display menu to your template ( cf : http://codex.wordpress.org/Function_Reference/wp_nav_menu )
 register_nav_menus( array(
-    'main_menu' => __( 'Menu principal', 'minimal-blank-theme' )
+    'main_menu' => __( 'Menu principal', 'minimal-blank-theme' ) //@TODO : change i18n domain name to yours
 ) );
 
 
