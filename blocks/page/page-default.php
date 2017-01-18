@@ -4,5 +4,7 @@
 		<?php
 		// Content example for CSS ajustments - Uncomment it if you need
 		//get_template_part( 'blocks/default/the-content', 'example' );
+		the_content();
+		?>
 	</section>
 </article>
