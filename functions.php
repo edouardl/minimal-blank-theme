@@ -11,7 +11,9 @@ function customThemeSupport() {
     add_theme_support( 'menus' );
     add_theme_support( 'post-thumbnails' );
 
-    //add_theme_support( 'title-tag' );
+    // let wordpress manage the title
+    add_theme_support( 'title-tag' );
+
     //add_theme_support( 'custom-background', $args );
     //add_theme_support( 'custom-header', $args );
 

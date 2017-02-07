@@ -1,18 +1,11 @@
 <?php
 
-function enqueue_the_theme_scripts_and_styles() {
+function enqueueTheThemeScriptsAndStyles() {
 
 	// Comment reply JS
 	if( is_singular() ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
- 	// Default theme stylesheet
-	wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.css' );
-
-	// Javascript
-	// Default js of your theme to add your own js scripts, add dependances if needed
-	wp_enqueue_script( 'scripts', get_stylesheet_directory_uri() . '/js/scripts.js' , array( 'jquery' ), '1.0', true);
 
 	// @TODO : Uncomment what you need
 
@@ -27,14 +20,21 @@ function enqueue_the_theme_scripts_and_styles() {
 	//wp_enqueue_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
 
 	// Animate CSS
-	//wp_enqueue_style( 'bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' );
+	//wp_enqueue_style( 'animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' );
+
 
 	// ENQUEUE your css below
 
 	// ENQUEUE your js below
-	
+
+
+	// Default theme stylesheet
+	wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.css' );
+
+	// Default js of your theme to add your own js scripts, add dependances if needed
+	wp_enqueue_script( 'scripts', get_stylesheet_directory_uri() . '/js/scripts.js' , array( 'jquery' ), '1.0', true);
 }
-add_action('wp_enqueue_scripts', 'enqueue_the_theme_scripts_and_styles');
+add_action('wp_enqueue_scripts', 'enqueueTheThemeScriptsAndStyles');
 
 /**
  * Unregister jQuery and jQueryUI from WP Core
@@ -42,7 +42,7 @@ add_action('wp_enqueue_scripts', 'enqueue_the_theme_scripts_and_styles');
  *
  * @return void
  */
-function register_jquery_from_cdn() {
+function registerJqueryFromCdn() {
 	// Use jquery and jquery core from the google cdn instead of wordpress included
 	wp_deregister_script( 'jquery-ui-core' );
 	wp_deregister_script( 'jquery-ui-tab' );
@@ -68,4 +68,4 @@ function register_jquery_from_cdn() {
 	wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', array(), '1.11.3' );
 	wp_register_script( 'jquery-ui-core', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js', array( 'jquery' ), '1.11.4', true);
 }
-add_action('wp_head', 'register_jquery_from_cdn', 1 );
+add_action('wp_head', 'registerJqueryFromCdn', 1 );
