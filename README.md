@@ -5,7 +5,7 @@ A simple, light and minimal blank theme, to start any wordpress project, without
 Don't forget to  edit the value of $content_width in functions.php for your own theme and uncomment any js or css lib you need in inc/enqueues.php
 Default required css are set in style.css
 
-The Minimal Blank Theme made by Pierre-Olivier Blouin and Edouard Labre, is currently in version 1.2 (2016/03/08).
+The Minimal Blank Theme made by Pierre-Olivier B. and Edouard L., is currently in version 1.2 (2016/03/08).
 
 
 Changelog
